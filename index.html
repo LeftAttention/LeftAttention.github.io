@@ -348,7 +348,9 @@
               <span class="close" onclick="closeModal()">&times;</span>
               <p>Hey Bro!</p>
               <!-- <iframe
-                src="https://docs.google.com/document/d/e/2PACX-1vRj-4noBz3q5q6ldbwpFK2UfxZRl5zvkW82gXDEW3H820tBHtRXW5gKA6uIGrxfzLzvHnMSYoVeJv11/pub?embedded=true"></iframe> -->
+                src="https://docs.google.com/document/d/e/2PACX-1vRj-4noBz3q5q6ldbwpFK2UfxZRl5zvkW82gXDEW3H820tBHtRXW5gKA6uIGrxfzLzvHnMSYoVeJv11/pub?embedded=true"></iframe>
+ -->            
+              <iframe src="https://docs.google.com/document/d/e/2PACX-1vT4eaZwTaBggO7mvSdRWawhsyqY1kg-4lzo5kYII2GUNgfxm2ESAmB7Gb80R7F5_LBq7DZAgfpRGGDJ/pub?embedded=true" height="100%" width="100%" allowfullscreen="" frameborder="0"></iframe>
             </div>
           </div>
 
@@ -584,7 +586,7 @@
                 <p>+1 5589 55488 55s</p>
               </div>
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 500px;" allowfullscreen></iframe>-->   
             </div>
 
           </div>
@@ -662,6 +664,23 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    var modal = document.getElementById("portfolioModal-1");
+
+    function portfolioModal() {
+      modal.style.display = 'block';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+  window.onclick = function (event) {
+      if (event.target == modal) {
+          modal.style.display = 'none';
+      }
+    }
+  </script>
 
 </body>
 
