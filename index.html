@@ -339,13 +339,16 @@
                 <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
                 <a onclick="portfolioModal()" title="More Details"><i class="bx bx-link"></i></a>
-                <div id="portfolioModal-1" class="modal">
-                  <div class="modal-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <p>Hey Bro!</p>
-                  </div>
-                </div>
               </div>
+            </div>
+          </div>
+
+          <div id="portfolioModal-1" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <p>Hey Bro!</p>
+              <!-- <iframe
+                src="https://docs.google.com/document/d/e/2PACX-1vRj-4noBz3q5q6ldbwpFK2UfxZRl5zvkW82gXDEW3H820tBHtRXW5gKA6uIGrxfzLzvHnMSYoVeJv11/pub?embedded=true"></iframe> -->
             </div>
           </div>
 
@@ -668,7 +671,6 @@
 
     function closeModal() {
       modal.style.display = 'none';
-      console.log("Clicked");
     }
 
   window.onclick = function (event) {
