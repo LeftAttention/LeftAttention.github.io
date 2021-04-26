@@ -207,6 +207,20 @@
 //     modal.style.display = 'none';
 //   }
 // }
+
+var portfolio_count = 9;
+for(var i=0; i < portfolio_count; i++){
+  var modal_body = "";
+  modal_body += '<div class="col-lg-4 col-md-6 portfolio-item filter-app">';
+  modal_body += '<div class="portfolio-wrap">';
+  modal_body += '<img src="assets/img/portfolio/'+ String(i+1) + '.jpg" class="img-fluid" alt="">';
+  modal_body += '<div class="portfolio-links">';
+  modal_body += '<a href="assets/img/portfolio/' + String(i+1) + '.jpg data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>';
+  modal_body += '<a onclick="portfolioModal('+ String(i+1) + ')" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>';
+  modal_body += '</div></div></div>';
+  $("#modal-portfolio-ancestor").append(modal_body);
+}
+
 function portfolioModal() {
   var iframelink = {
     1: {"url" : "https://docs.google.com/document/d/e/2PACX-1vQquIBgaOJeohsHXOq4SEtxISvCgzV2cni1CZewAOst0w9p_qIK-zV6w2xKA7qYgh-pu10-uCeIi9iQ/pub?embedded=true", "title" : "3D Pose"},
