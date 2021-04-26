@@ -209,18 +209,19 @@
 // }
 function portfolioModal() {
   var iframelink = {
-    1: "https://docs.google.com/document/d/e/2PACX-1vT4eaZwTaBggO7mvSdRWawhsyqY1kg-4lzo5kYII2GUNgfxm2ESAmB7Gb80R7F5_LBq7DZAgfpRGGDJ/pub?embedded=true",
-    2:"",
-    3:"",
-    4:"",
-    5:"",
-    6:"",
-    7:"",
-    8:"",
-    9:""};
+    1: {"url" : "https://docs.google.com/document/d/e/2PACX-1vQquIBgaOJeohsHXOq4SEtxISvCgzV2cni1CZewAOst0w9p_qIK-zV6w2xKA7qYgh-pu10-uCeIi9iQ/pub?embedded=true", "title" : "3D Pose"},
+    2: {"url" : "https://docs.google.com/document/d/e/2PACX-1vRRFaQegzl8tzsYukBnyS8O9F5SbkKwK-VYUtxxPtcLw2zxg1__ryAIWtoDD03WtcpqKnQTkYO6HIfh/pub?embedded=true", "title" : "Deep Fake"},
+    3: {"url" : "https://docs.google.com/document/d/e/2PACX-1vRWDsdB8P6VlxmtTMKVuGoAb8fQ3h3db7pbjgslVt3MBwmZMbAMBW05v256OWYAHDCzLGldu1oH3Zk-/pub?embedded=true", "title" : "Temperature"},
+    4: {"url" : "https://docs.google.com/document/d/e/2PACX-1vQHvnkCC71MQ3MJt-yPx5wtqVVVZygtu54O_P7dXUYANyqi3BNWLazoK26d-wWMVYpNe-fgC5ZMqNmN/pub?embedded=true", "title" : "CARD"},
+    5: {"url" : "https://docs.google.com/document/d/e/2PACX-1vQu-x4PiW4VCrJSBNPWKoxL1rQgtej2XHUp0id505IiNd1wrDsJfQJ_dkK8azOoHHUGUdZ9jX_aFCTy/pub?embedded=true", "title" : "TimeGAN"},
+    6: {"url" : "https://docs.google.com/document/d/e/2PACX-1vSxHc45kbEbVM0BhFPNMlXOaiLuc9g-M9i9OP48c2uWh_lqCIm4DFYZWMA0ZEmtEfbd9UHvayXH5qs4/pub?embedded=true", "title" : "One Step Ahead of UNet"},
+    7: {"url" : "https://docs.google.com/document/d/e/2PACX-1vTgiNTWzi9-nDndKhoJmUNdCSholi7X1dWjeoL9iv0eegFQ5AXW6Wi2JTOVd9F20W74poIFs7sk7eH4/pub?embedded=true", "title" : "E2E_Chatbot"},
+    8: {"url" : "https://docs.google.com/document/d/e/2PACX-1vT4eaZwTaBggO7mvSdRWawhsyqY1kg-4lzo5kYII2GUNgfxm2ESAmB7Gb80R7F5_LBq7DZAgfpRGGDJ/pub?embedded=true", "title" : "Panoptic Segmentation"},
+    9: {"url" : "", "title" : ""}};
   $('#modal-container').removeAttr('class').addClass("modal-anim");
   $('body').addClass('modal-active');
-  $('#modal-iframe').attr("src", iframelink[arguments[0]]);
+  $('#modal-heading').html(iframelink[arguments[0]]['title']);
+  $('#modal-iframe').attr("src", iframelink[arguments[0]]['url']);
 }
 
 $('#modal-container').click(function () {
