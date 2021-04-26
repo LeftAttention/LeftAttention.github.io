@@ -588,7 +588,7 @@ section {
 /*--------------------------------------------------------------
 # Portfolio Modals
 --------------------------------------------------------------*/
-.modal{
+/* .modal{
   display: none;
   position: fixed;
   z-index: 4;
@@ -638,7 +638,7 @@ section {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-}
+} */
 
 /*--------------------------------------------------------------
 # Services
