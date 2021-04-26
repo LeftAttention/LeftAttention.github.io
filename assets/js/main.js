@@ -192,22 +192,6 @@
 
 })(jQuery);
 
-// var modal = document.getElementById("portfolioModal-1");
-
-// function portfolioModal() {
-//   modal.style.display = 'block';
-// }
-
-// function closeModal() {
-//   modal.style.display = 'none';
-// }
-
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     modal.style.display = 'none';
-//   }
-// }
-
 var portfolio_count = 9;
 for(var i=0; i < portfolio_count; i++){
   var modal_body = "";
