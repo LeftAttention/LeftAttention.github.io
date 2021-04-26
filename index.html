@@ -26,7 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  ><link rel="stylesheet" href="assets/css/modal.css">
+  <link rel="stylesheet" href="assets/css/modal.css">
   <!-- =======================================================
   * Template Name: iPortfolio - v1.5.1
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
@@ -338,7 +338,7 @@
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                <a onclick="portfolioModal()" title="More Details" class="one"><i class="bx bx-link"></i></a>
+                <a onclick="portfolioModal(1)" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -353,9 +353,7 @@
           <div id="modal-container">
             <div class="modal-background">
               <div class="modal">
-                <iframe src="https://docs.google.com/document/d/e/2PACX-1vT4eaZwTaBggO7mvSdRWawhsyqY1kg-4lzo5kYII2GUNgfxm2ESAmB7Gb80R7F5_LBq7DZAgfpRGGDJ/pub?embedded=true"
-                                height="100%" width="100%" allowfullscreen="" frameborder="0"></iframe>
-
+                <iframe id="modal-iframe" height="100%" width="100%" allowfullscreen="" frameborder="0"></iframe>
               </div>
             </div>
           </div>
@@ -365,7 +363,7 @@
               <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>  <!--more link-->
+                <a onclick="portfolioModal(2)" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>  <!--more link-->
               </div>
             </div>
           </div>
@@ -375,7 +373,7 @@
               <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <a onclick="portfolioModal(3)" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -385,7 +383,7 @@
               <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <a onclick="portfolioModal(4)" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -395,7 +393,7 @@
               <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <a onclick="portfolioModal(5)" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -405,7 +403,7 @@
               <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <a onclick="portfolioModal(6)" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -415,7 +413,7 @@
               <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <a onclick="portfolioModal(7)" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -425,7 +423,7 @@
               <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <a onclick="portfolioModal(8)" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -435,7 +433,7 @@
               <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <a onclick="portfolioModal(9)" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>

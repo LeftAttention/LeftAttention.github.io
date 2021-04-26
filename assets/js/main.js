@@ -208,9 +208,16 @@
 //   }
 // }
 function portfolioModal() {
-  $('#modal-container').removeAttr('class').addClass("one");
+  $('#modal-container').removeAttr('class').addClass("modal-anim");
   $('body').addClass('modal-active');
-  console.log("clicking");
+  switch(arguments[0]){
+    case 1:
+      $('#modal-iframe').attr("src", "https://docs.google.com/document/d/e/2PACX-1vT4eaZwTaBggO7mvSdRWawhsyqY1kg-4lzo5kYII2GUNgfxm2ESAmB7Gb80R7F5_LBq7DZAgfpRGGDJ/pub?embedded=true");
+      break;
+    case 2:
+      $('#modal-iframe').attr("src", );
+      break;
+  }
 }
 
 $('#modal-container').click(function () {
