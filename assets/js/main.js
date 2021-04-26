@@ -220,37 +220,7 @@ function portfolioModal() {
     9:""};
   $('#modal-container').removeAttr('class').addClass("modal-anim");
   $('body').addClass('modal-active');
-  // switch(arguments[0]){
-  //   case 1:
-  //     iframelink = "https://docs.google.com/document/d/e/2PACX-1vT4eaZwTaBggO7mvSdRWawhsyqY1kg-4lzo5kYII2GUNgfxm2ESAmB7Gb80R7F5_LBq7DZAgfpRGGDJ/pub?embedded=true";
-  //     break;
-  //   case 2:
-  //     iframelink = "";
-  //     break;
-  //   case 3:
-  //     iframelink = "";
-  //     break;
-  //   case 4:
-  //     iframelink = "";
-  //     break;
-  //   case 5:
-  //     iframelink = "";
-  //     break;
-  //   case 6:
-  //     iframelink = "";
-  //     break;
-  //   case 7:
-  //     iframelink = "";
-  //     break;
-  //   case 8:
-  //     iframelink = "";
-  //     break;
-  //   case 9:
-  //     iframelink = "";
-  //     break;
-  // }
   $('#modal-iframe').attr("src", iframelink[arguments[0]]);
-  console.log(iframelink[arguments[0]])
 }
 
 $('#modal-container').click(function () {
