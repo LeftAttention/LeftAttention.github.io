@@ -155,13 +155,13 @@ var json = (function(){
   });
 
   // Skills section
-  $('.skills-content').waypoint(function() {
-    $('.progress .progress-bar').each(function() {
-      $(this).css("width", $(this).attr("aria-valuenow") + '%');
-    });
-  }, {
-    offset: '80%'
-  });
+  // $('.skills-content').waypoint(function() {
+  //   $('.progress .progress-bar').each(function() {
+  //     $(this).css("width", $(this).attr("aria-valuenow") + '%');
+  //   });
+  // }, {
+  //   offset: '80%'
+  // });
 
   // Porfolio isotope and filter
   $(window).on('load', function() {
@@ -244,22 +244,22 @@ for(var n = 0; n<fact_data.length; n++){
 
 //Skills
 
-var skill_data = json['skill_data']
+// var skill_data = json['skill_data']
 
-for(var m = 0; m<skill_data.length; m++){
-  var skill_body = ''
-  skill_body = '<div class="col-lg-6" data-aos="fade-up" data-aos-delay="' + String(m*100)+ '" >'
-  for(var l = 0; l < skill_data[m].length; l++){
-    var skill_card = '';
-    skill_card += '<div class="progress">';
-    skill_card += '<span class="skill">' + skill_data[m][l]['skill'] + '<i class="val">' + skill_data[m][l]['value'] + '%</i></span>';
-    skill_card += '<div class="progress-bar-wrap">'
-    skill_card += '<div class="progress-bar" role="progressbar" aria-valuenow="' + skill_data[m][l]['value'] + '" aria-valuemin="0" aria-valuemax="100"></div>';
-    skill_card += '</div></div>';
-    skill_body += skill_card;
-  }
-  $('#skill-parent').append(skill_body);
-}
+// for(var m = 0; m<skill_data.length; m++){
+//   var skill_body = ''
+//   skill_body = '<div class="col-lg-6" data-aos="fade-up" data-aos-delay="' + String(m*100)+ '" >'
+//   for(var l = 0; l < skill_data[m].length; l++){
+//     var skill_card = '';
+//     skill_card += '<div class="progress">';
+//     skill_card += '<span class="skill">' + skill_data[m][l]['skill'] + '<i class="val">' + skill_data[m][l]['value'] + '%</i></span>';
+//     skill_card += '<div class="progress-bar-wrap">'
+//     skill_card += '<div class="progress-bar" role="progressbar" aria-valuenow="' + skill_data[m][l]['value'] + '" aria-valuemin="0" aria-valuemax="100"></div>';
+//     skill_card += '</div></div>';
+//     skill_body += skill_card;
+//   }
+//   $('#skill-parent').append(skill_body);
+// }
 
 //Services
 
@@ -304,19 +304,43 @@ $('#modal-container').click(function () {
 
 var url = 'https://script.google.com/macros/s/AKfycbwlC92ZNwDRDVRw9s91QVfUroZfgnlNcfGdwUM7_5SBALlBWRbCrFRnmNZXAc3TQG3YXw/exec'
 
+function sendEmail() {
+  var mail = {};
+  for (var i = 0; i < Object.keys(arguments[0]).length; i++){
+    mail[arguments[0][i]['name']] = arguments[0][i]['value'];
+  }
+  var mail_body = `<p>Someone Tried to contact you</p> 
+                    <h4>Name : `+ mail['name'] + `</h4> 
+                    <h4>Email : ` + mail['email'] + `</h4><h4> Message</h4>
+                    <p>` + mail['message'] + '</p>';
+  console.log(mail);
+  Email.send({
+    SecureToken: "7a0d1175-c94d-4f2a-83df-caafa0363b9a",
+    To: 'commonpeople02@gmail.com',
+    From: "commonpeople02@gmail.com",
+    Subject: mail['subject'],
+    Body: mail_body,
+  })
+    .then(function (message) {
+      console.log(message);
+    });
+}
+
 $('form.php-email-form').submit(function(e){
   e.preventDefault();
 
   var this_form = $(this);
+  var form_response = $("#myForm").serializeArray();
 
   $.ajax({
-    url: 'https://api.apispreadsheets.com/data/11519/',
+    url: 'https://api.apispreadsheets.com/data/11523/',
     type: 'post',
     data: $("#myForm").serializeArray(),
     success: function () {
       this_form.find('.loading').slideUp();
       this_form.find('.sent-message').slideDown();
       this_form.find("input:not(input[type=submit]), textarea").val('');
+      sendEmail(form_response);
     },
     error: function () {
       alert("There was an error :(")
