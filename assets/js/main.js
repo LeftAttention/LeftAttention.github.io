@@ -7,6 +7,8 @@
 !(function($) {
   "use strict";
 
+  //Testimonial cards
+
   var testimonial_data = [
     { "name": "Saul GOodnam", 'desig': "Ceo &amp; Founder", 'content': 'Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.' },
     { "name": "Sara Wilson", 'desig': "Designer", 'content': "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa." },
@@ -216,6 +218,38 @@
 
 })(jQuery);
 
+//Skills
+
+var skill_data = [
+  [
+    { 'skill': "HTML", 'value' : 100},
+    { 'skill': "CSS", 'value': 90 },
+    { 'skill': "JavaScript", 'value': 75 }
+  ],
+  [
+    { 'skill': "PHP", 'value': 80 },
+    { 'skill': "Wordpress", 'value': 90 },
+    { 'skill': "Photoshop", 'value': 55 }
+  ]
+]
+
+for(var m = 0; m<skill_data.length; m++){
+  var skill_body = ''
+  skill_body = '<div class="col-lg-6" data-aos="fade-up" data-aos-delay="' + String(m*100)+ '" >'
+  for(var l = 0; l < skill_data[m].length; l++){
+    var skill_card = '';
+    skill_card += '<div class="progress">';
+    skill_card += '<span class="skill">' + skill_data[m][l]['skill'] + '<i class="val">' + skill_data[m][l]['value'] + '%</i></span>';
+    skill_card += '<div class="progress-bar-wrap">'
+    skill_card += '<div class="progress-bar" role="progressbar" aria-valuenow="' + skill_data[m][l]['value'] + '" aria-valuemin="0" aria-valuemax="100"></div>';
+    skill_card += '</div></div>';
+    skill_body += skill_card;
+  }
+  $('#skill-parent').append(skill_body);
+}
+
+//Services
+
 var services_data = [
   { "title" : "Lorem Ipsum", "content" : "Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident", "icon" : "icofont-computer"},
   { "title" : "Dolor Sitema", "content" : "Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata", "icon" : "icofont-chart-bar-graph"},
@@ -234,10 +268,22 @@ for(var k = 0; k<services_data.length; k++){
   $('#service-parent').append(service_card);
 }
 
-var portfolio_count = 9;
-for(var i=0; i < portfolio_count; i++){
+//Portfolio Modals
+
+var iframelink = {
+  1: { "url": "https://docs.google.com/document/d/e/2PACX-1vQquIBgaOJeohsHXOq4SEtxISvCgzV2cni1CZewAOst0w9p_qIK-zV6w2xKA7qYgh-pu10-uCeIi9iQ/pub?embedded=true", "title": "3D Pose", "filter": "app" },
+  2: { "url": "https://docs.google.com/document/d/e/2PACX-1vRRFaQegzl8tzsYukBnyS8O9F5SbkKwK-VYUtxxPtcLw2zxg1__ryAIWtoDD03WtcpqKnQTkYO6HIfh/pub?embedded=true", "title": "Deep Fake", "filter": "app" },
+  3: { "url": "https://docs.google.com/document/d/e/2PACX-1vRWDsdB8P6VlxmtTMKVuGoAb8fQ3h3db7pbjgslVt3MBwmZMbAMBW05v256OWYAHDCzLGldu1oH3Zk-/pub?embedded=true", "title": "Temperature", "filter": "web" },
+  4: { "url": "https://docs.google.com/document/d/e/2PACX-1vQHvnkCC71MQ3MJt-yPx5wtqVVVZygtu54O_P7dXUYANyqi3BNWLazoK26d-wWMVYpNe-fgC5ZMqNmN/pub?embedded=true", "title": "CARD", "filter": "card" },
+  5: { "url": "https://docs.google.com/document/d/e/2PACX-1vQu-x4PiW4VCrJSBNPWKoxL1rQgtej2XHUp0id505IiNd1wrDsJfQJ_dkK8azOoHHUGUdZ9jX_aFCTy/pub?embedded=true", "title": "TimeGAN", "filter": "web" },
+  6: { "url": "https://docs.google.com/document/d/e/2PACX-1vSxHc45kbEbVM0BhFPNMlXOaiLuc9g-M9i9OP48c2uWh_lqCIm4DFYZWMA0ZEmtEfbd9UHvayXH5qs4/pub?embedded=true", "title": "One Step Ahead of UNet", "filter": "card" },
+  7: { "url": "https://docs.google.com/document/d/e/2PACX-1vTgiNTWzi9-nDndKhoJmUNdCSholi7X1dWjeoL9iv0eegFQ5AXW6Wi2JTOVd9F20W74poIFs7sk7eH4/pub?embedded=true", "title": "E2E_Chatbot", "filter": "card" },
+  8: { "url": "https://docs.google.com/document/d/e/2PACX-1vT4eaZwTaBggO7mvSdRWawhsyqY1kg-4lzo5kYII2GUNgfxm2ESAmB7Gb80R7F5_LBq7DZAgfpRGGDJ/pub?embedded=true", "title": "Panoptic Segmentation", "filter": "app" },
+  9: { "url": "", "title": "", "filter": "app" }
+};
+for (var i = 0; i < Object.keys(iframelink).length; i++){
   var portfolio_body = "";
-  portfolio_body += '<div class="col-lg-4 col-md-6 portfolio-item filter-app">';
+  portfolio_body += '<div class="col-lg-4 col-md-6 portfolio-item filter-' +iframelink[i+1]['filter'] + '">';
   portfolio_body += '<div class="portfolio-wrap">';
   portfolio_body += '<img src="assets/img/portfolio/'+ String(i+1) + '.jpg" class="img-fluid" alt="">';
   portfolio_body += '<div class="portfolio-links">';
@@ -248,16 +294,6 @@ for(var i=0; i < portfolio_count; i++){
 }
 
 function portfolioModal() {
-  var iframelink = {
-    1: {"url" : "https://docs.google.com/document/d/e/2PACX-1vQquIBgaOJeohsHXOq4SEtxISvCgzV2cni1CZewAOst0w9p_qIK-zV6w2xKA7qYgh-pu10-uCeIi9iQ/pub?embedded=true", "title" : "3D Pose"},
-    2: {"url" : "https://docs.google.com/document/d/e/2PACX-1vRRFaQegzl8tzsYukBnyS8O9F5SbkKwK-VYUtxxPtcLw2zxg1__ryAIWtoDD03WtcpqKnQTkYO6HIfh/pub?embedded=true", "title" : "Deep Fake"},
-    3: {"url" : "https://docs.google.com/document/d/e/2PACX-1vRWDsdB8P6VlxmtTMKVuGoAb8fQ3h3db7pbjgslVt3MBwmZMbAMBW05v256OWYAHDCzLGldu1oH3Zk-/pub?embedded=true", "title" : "Temperature"},
-    4: {"url" : "https://docs.google.com/document/d/e/2PACX-1vQHvnkCC71MQ3MJt-yPx5wtqVVVZygtu54O_P7dXUYANyqi3BNWLazoK26d-wWMVYpNe-fgC5ZMqNmN/pub?embedded=true", "title" : "CARD"},
-    5: {"url" : "https://docs.google.com/document/d/e/2PACX-1vQu-x4PiW4VCrJSBNPWKoxL1rQgtej2XHUp0id505IiNd1wrDsJfQJ_dkK8azOoHHUGUdZ9jX_aFCTy/pub?embedded=true", "title" : "TimeGAN"},
-    6: {"url" : "https://docs.google.com/document/d/e/2PACX-1vSxHc45kbEbVM0BhFPNMlXOaiLuc9g-M9i9OP48c2uWh_lqCIm4DFYZWMA0ZEmtEfbd9UHvayXH5qs4/pub?embedded=true", "title" : "One Step Ahead of UNet"},
-    7: {"url" : "https://docs.google.com/document/d/e/2PACX-1vTgiNTWzi9-nDndKhoJmUNdCSholi7X1dWjeoL9iv0eegFQ5AXW6Wi2JTOVd9F20W74poIFs7sk7eH4/pub?embedded=true", "title" : "E2E_Chatbot"},
-    8: {"url" : "https://docs.google.com/document/d/e/2PACX-1vT4eaZwTaBggO7mvSdRWawhsyqY1kg-4lzo5kYII2GUNgfxm2ESAmB7Gb80R7F5_LBq7DZAgfpRGGDJ/pub?embedded=true", "title" : "Panoptic Segmentation"},
-    9: {"url" : "", "title" : ""}};
   $('#modal-container').removeAttr('class').addClass("modal-anim");
   $('body').addClass('modal-active');
   $('#modal-heading').html(iframelink[arguments[0]]['title']);
