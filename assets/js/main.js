@@ -301,3 +301,25 @@ $('#modal-container').click(function () {
   $(this).addClass('out');
   $('body').removeClass('modal-active');
 });
+
+var url = 'https://script.google.com/macros/s/AKfycbwlC92ZNwDRDVRw9s91QVfUroZfgnlNcfGdwUM7_5SBALlBWRbCrFRnmNZXAc3TQG3YXw/exec'
+
+$('form.php-email-form').submit(function(e){
+  e.preventDefault();
+
+  var this_form = $(this);
+
+  $.ajax({
+    url: 'https://api.apispreadsheets.com/data/11519/',
+    type: 'post',
+    data: $("#myForm").serializeArray(),
+    success: function () {
+      this_form.find('.loading').slideUp();
+      this_form.find('.sent-message').slideDown();
+      this_form.find("input:not(input[type=submit]), textarea").val('');
+    },
+    error: function () {
+      alert("There was an error :(")
+    }
+  });
+});
