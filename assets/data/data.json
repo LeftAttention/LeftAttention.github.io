@@ -118,5 +118,31 @@
             "title": "",
             "filter": "app"
         }
-    }
+    },
+    "fact_data": [
+        {
+            "value": 232,
+            "title": "Happy Clients",
+            "content": "Consquuntur qae",
+            "icon": "icofont-simple-smile"
+        },
+        {
+            "value": 521,
+            "title": "Projects",
+            "content": "adipisci atque cum quia aut",
+            "icon": "icofont-document-folder"
+        },
+        {
+            "value": 1463,
+            "title": "Hours of Support",
+            "content": "aut commodi quaerat",
+            "icon": "icofont-live-support"
+        },
+        {
+            "value": 15,
+            "title": "Hard Workers",
+            "content": "rerum asperiores dolor",
+            "icon": "icofont-users-alt-5"
+        }
+    ]
 }
