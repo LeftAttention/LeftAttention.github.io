@@ -216,6 +216,24 @@
 
 })(jQuery);
 
+var services_data = [
+  { "title" : "Lorem Ipsum", "content" : "Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident", "icon" : "icofont-computer"},
+  { "title" : "Dolor Sitema", "content" : "Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata", "icon" : "icofont-chart-bar-graph"},
+  { "title": "Sed ut perspiciatis", "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur", "icon": "icofont-earth"},
+  { "title": "Magni Dolores", "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", "icon": "icofont-image"},
+  { "title": "Nemo Enim", "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque", "icon": "icofont-settings"},
+  { "title": "Eiusmod Tempor", "content": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi", "icon": "icofont-tasks-alt"}
+]
+
+for(var k = 0; k<services_data.length; k++){
+  var service_card = "";
+  service_card += '<div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="'+ String(k*100) + '">';
+  service_card += '<div class="icon"><i class=' + services_data[k]['icon'] + '></i></div>';
+  service_card += '<h4 class="title"><a href="">' + services_data[k]['title'] + '</a></h4>';
+  service_card += '<p class="description">' + services_data[k]['content'] + '</p></div>';
+  $('#service-parent').append(service_card);
+}
+
 var portfolio_count = 9;
 for(var i=0; i < portfolio_count; i++){
   var portfolio_body = "";
@@ -228,8 +246,6 @@ for(var i=0; i < portfolio_count; i++){
   portfolio_body += '</div></div></div>';
   $("#modal-portfolio-ancestor").append(portfolio_body);
 }
-
-
 
 function portfolioModal() {
   var iframelink = {
