@@ -7,6 +7,29 @@
 !(function($) {
   "use strict";
 
+  var testimonial_data = [
+    { "name": "Saul GOodnam", 'desig': "Ceo &amp; Founder", 'content': 'Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.' },
+    { "name": "Sara Wilson", 'desig': "Designer", 'content': "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa." },
+    { "name": "Jena Karlis", "desig": "Store Owner", "content": "Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim." },
+    { "name": "Matt Brandon", "desig": "Freelancer", "content": "Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam." },
+    { "name": "John Larson", "desig": "Enterpreneur", "content": "Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid." }
+  ]
+
+  for (var j = 0; j < testimonial_data.length; j++) {
+    var testimonial_body = '';
+    testimonial_body += '<div class="testimonial-item" data-aos="fade-up" data-aos-delay="' + String(j * 100) + '">';
+    testimonial_body += '<p>';
+    testimonial_body += '<i class="bx bxs-quote-alt-left quote-icon-left"></i>';
+    testimonial_body += testimonial_data[j]['content'];
+    testimonial_body += '<i class="bx bxs-quote-alt-right quote-icon-right"></i>';
+    testimonial_body += '</p>';
+    testimonial_body += '<img src="assets/img/testimonials/' + String(j + 1) + '.jpg" class="testimonial-img" alt="">'
+    testimonial_body += '<h3>' + testimonial_data[j]['name'] + '</h3>';
+    testimonial_body += '<h4>' + testimonial_data[j]['desig'] + '</h4>';
+    testimonial_body += '</div>';
+    $('#testimonial-parent').append(testimonial_body);
+  }
+
   // Hero typed
   if ($('.typed').length) {
     var typed_strings = $(".typed").data('typed-items');
@@ -136,6 +159,7 @@
       layoutMode: 'fitRows'
     });
 
+
     $('#portfolio-flters li').on('click', function() {
       $("#portfolio-flters li").removeClass('filter-active');
       $(this).addClass('filter-active');
@@ -194,16 +218,18 @@
 
 var portfolio_count = 9;
 for(var i=0; i < portfolio_count; i++){
-  var modal_body = "";
-  modal_body += '<div class="col-lg-4 col-md-6 portfolio-item filter-app">';
-  modal_body += '<div class="portfolio-wrap">';
-  modal_body += '<img src="assets/img/portfolio/'+ String(i+1) + '.jpg" class="img-fluid" alt="">';
-  modal_body += '<div class="portfolio-links">';
-  modal_body += '<a href="assets/img/portfolio/' + String(i+1) + '.jpg data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>';
-  modal_body += '<a onclick="portfolioModal('+ String(i+1) + ')" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>';
-  modal_body += '</div></div></div>';
-  $("#modal-portfolio-ancestor").append(modal_body);
+  var portfolio_body = "";
+  portfolio_body += '<div class="col-lg-4 col-md-6 portfolio-item filter-app">';
+  portfolio_body += '<div class="portfolio-wrap">';
+  portfolio_body += '<img src="assets/img/portfolio/'+ String(i+1) + '.jpg" class="img-fluid" alt="">';
+  portfolio_body += '<div class="portfolio-links">';
+  portfolio_body += '<a href="assets/img/portfolio/' + String(i+1) + '.jpg data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>';
+  portfolio_body += '<a onclick="portfolioModal('+ String(i+1) + ')" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>';
+  portfolio_body += '</div></div></div>';
+  $("#modal-portfolio-ancestor").append(portfolio_body);
 }
+
+
 
 function portfolioModal() {
   var iframelink = {
