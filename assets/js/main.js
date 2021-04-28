@@ -309,16 +309,24 @@ function sendEmail() {
   for (var i = 0; i < Object.keys(arguments[0]).length; i++){
     mail[arguments[0][i]['name']] = arguments[0][i]['value'];
   }
-  var mail_body = `<p>Someone Tried to contact you</p> 
-                    <h4>Name : `+ mail['name'] + `</h4> 
-                    <h4>Email : ` + mail['email'] + `</h4><h4> Message</h4>
-                    <p>` + mail['message'] + '</p>';
+  var mail_body = `<table style="width: 100%">
+                      <tr style="border:1px solid black">
+                        <td><h4>Name</h4></td><td> `+ mail['name'] + `</td>
+                      </tr>
+                      <tr style="border:1px solid black">
+                        <td><h4>Email</h4></td><td> ` + mail['email'] + `</td>
+                      </tr>
+                      <tr style="border:1px solid black">
+                        <td><h4> Message</h4></td><td>` + mail['message'] + `</td>
+                      </tr>
+                    </table>
+                  <h3>To display all responses Click <a href="https://docs.google.com/spreadsheets/d/1bLGQt3r86DEW04Q8__0gHpykPrgC5Qc1awxg-oc7rUg/edit?usp=sharing">here</a></h3>"`;
   console.log(mail);
   Email.send({
     SecureToken: "7a0d1175-c94d-4f2a-83df-caafa0363b9a",
     To: 'commonpeople02@gmail.com',
     From: "commonpeople02@gmail.com",
-    Subject: mail['subject'],
+    Subject: `Portfolio Contact : `+mail['subject'],
     Body: mail_body,
   })
     .then(function (message) {
