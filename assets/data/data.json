@@ -117,6 +117,16 @@
             "url": "https://docs.google.com/document/d/e/2PACX-1vQv_-UYI2gOAchR0Z62CIZ8vOtRSze64D8mEoX2CVSSqwrIkWsMhFV8mMP6ZW2-6-ckB4Xq26yWqTK1/pub?embedded=true",
             "title": "FaceForensics++",
             "filter": "app"
+        },
+        "10": {
+            "url": "https://docs.google.com/document/d/e/2PACX-1vQTsYQvtHjCUH_HTXjp4GhZQEh6v4PTp-n91XyidwBKJZdUY31un0Aa_Ipg6MQvu19jFjIEyQqTxlSr/pub?embedded=true",
+            "title": "PoseNET",
+            "filter": "app"
+        },
+        "11": {
+            "url": "https://docs.google.com/document/d/e/2PACX-1vQ8xjUiKSNC72OAm6CbW_RWftijogCv1YtD5FIwC-W2sZfiXN6nDNQs6UoQCkQr8aZMB4iOiOZRUcwH/pub?embedded=true",
+            "title": "NegSine",
+            "filter": "app"
         }
     },
     "fact_data": [
