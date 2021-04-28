@@ -331,6 +331,7 @@ $('form.php-email-form').submit(function(e){
 
   var this_form = $(this);
   var form_response = $("#myForm").serializeArray();
+  this_form.find('.loading').slideDown();
 
   $.ajax({
     url: 'https://api.apispreadsheets.com/data/11523/',
