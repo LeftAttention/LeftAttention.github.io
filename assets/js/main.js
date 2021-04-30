@@ -284,7 +284,7 @@ for (var i = 0; i < Object.keys(iframelink).length; i++){
   portfolio_body += '<div class="portfolio-wrap">';
   portfolio_body += '<img src="assets/img/portfolio/'+ String(i+1) + '.jpg" class="img-fluid" alt="">';
   portfolio_body += '<div class="portfolio-links">';
-  portfolio_body += '<a href="assets/img/portfolio/' + String(i+1) + '.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>';
+  portfolio_body += '<a href="assets/img/portfolio/' + String(i + 1) + '.jpg" data-gall="portfolioGallery" class="venobox" title="' + iframelink[i + 1]['title']+'"><i class="bx bx-plus"></i></a>';
   portfolio_body += '<a onclick="portfolioModal('+ String(i+1) + ')" title="More Details" class="modal-anim"><i class="bx bx-link"></i></a>';
   portfolio_body += '</div></div></div>';
   $("#modal-portfolio-ancestor").append(portfolio_body);
