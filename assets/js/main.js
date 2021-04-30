@@ -229,18 +229,18 @@ var json = (function(){
 
 //Facts
 
-var fact_data = json['fact_data'];
+// var fact_data = json['fact_data'];
 
-for(var n = 0; n<fact_data.length; n++){
-  var fact_card = '';
-  fact_card += '<div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="' + String(n*100) + '">';
-  fact_card += '<div class="count-box">';
-  fact_card += '<i class="' + fact_data[n]['icon'] + '"></i>';
-  fact_card += '<span data-toggle="counter-up">' + String(fact_data[n]["value"]) + '</span>';
-  fact_card += '<p><strong>' + fact_data[n]['title'] + '</strong>' + fact_data[n]['content'] + '</p>';
-  fact_card += '</div></div>';
-  $('#fact-parent').append(fact_card);
-}
+// for(var n = 0; n<fact_data.length; n++){
+//   var fact_card = '';
+//   fact_card += '<div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="' + String(n*100) + '">';
+//   fact_card += '<div class="count-box">';
+//   fact_card += '<i class="' + fact_data[n]['icon'] + '"></i>';
+//   fact_card += '<span data-toggle="counter-up">' + String(fact_data[n]["value"]) + '</span>';
+//   fact_card += '<p><strong>' + fact_data[n]['title'] + '</strong>' + fact_data[n]['content'] + '</p>';
+//   fact_card += '</div></div>';
+//   $('#fact-parent').append(fact_card);
+// }
 
 //Skills
 
